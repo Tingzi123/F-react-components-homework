@@ -30,7 +30,7 @@ class Chat extends Component {
   addMessage = (mess) => {
     const {messages} = this.state;
     messages.push(mess);
-    const newMessage = answersData.find((answer) => mess.text.includes(answer.tags));
+    const newMessage = answersData.find((answer) => mess.text.includes(answer.tags) || answer.tags.includes(mess.text));
     if (newMessage) {
       messages.push(newMessage);
     }
